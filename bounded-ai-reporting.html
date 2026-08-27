@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI analyst doesn't know what it doesn't know — Jen Airoldi</title>
+<meta name="description" content="Unbounded AI reporting looks exactly as confident whether the comparison group is valid or not. That's the whole problem.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@600;700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__side nav__left">
+    <a href="/about.html">About</a>
+    <a href="/notes.html" class="is-current">Notes</a>
+  </div>
+  <a class="brand" href="/">Jen Airoldi</a>
+  <div class="nav__side nav__right">
+    <a href="/projects.html">Projects</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+</nav>
+
+<main class="page">
+  <a class="back-link" href="/notes.html">← All Notes</a>
+  <h1>The AI analyst doesn't know what it doesn't know</h1>
+  <p class="lede">Unbounded AI reporting looks exactly as confident whether the comparison group is valid or not. That's the whole problem.</p>
+
+  <div class="article">
+    <p>I'm trying out this format as a way of recording what I'm thinking about in analytics. Feedback welcome - here's the first one.</p>
+
+    <p>Causal inference looks rigorous. The math is the easy part. The hard part is comparison group selection - which requires world knowledge, domain expertise, and enough imagination to see what's missing from the data, not just what's in it.</p>
+
+    <p>AI is very good at the math. It's structurally weak at the missing-data problem, because it doesn't know what it doesn't know - and it will answer just as confidently regardless. A competitor launch during your test window. A news story that broke mid-study. A player segment that was already churning before you touched anything. None of that shows up in the dataset, and nothing about a clean regression output tells you it's missing.</p>
+
+    <p>The distinction I keep coming back to is unbounded versus bounded AI reporting. Unbounded: point a model at the data, get conclusions back. It's confidently incomplete - it looks exactly as polished whether the comparison group is valid or not, and there's no visible seam between a sound analysis and a broken one. Bounded: a human domain expert has structured the question, chosen the comparison, and defined what the model is and isn't allowed to conclude. That's a genuinely different, useful thing.</p>
+
+    <p>The analyst who's been burned by a bad comparison group develops scar tissue - the caveat they reflexively add, the thing they instinctively double-check the next time. A model doesn't carry that forward. It starts every analysis exactly as confident as the last one, whether the last one was right or not.</p>
+
+    <p>This is the whole argument behind the <a href="/intake-tool.html">Analytics Intake Tool</a>. The point isn't to automate analysts out of the loop. It's to be honest about which parts of the job are actually safe to hand to a probabilistic system, and which parts need a person who's been wrong before and remembers why.</p>
+
+    <p>Confidently incomplete is worse than uncertain.</p>
+  </div>
+</main>
+
+</body>
+</html>
