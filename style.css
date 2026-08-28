@@ -325,36 +325,6 @@ a { color: inherit; text-decoration: none; }
 }
 .grid-2--reverse { grid-template-columns: 1fr minmax(160px, 220px); }
 
-/* Homepage hero stats */
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 60px;
-  align-items: center;
-}
-.hero-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  flex-shrink: 0;
-}
-.stat { text-align: right; }
-.stat__num {
-  font-family: 'Domine', serif;
-  font-weight: 700;
-  font-size: 34px;
-  color: var(--purple);
-  line-height: 1;
-}
-.stat__label {
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--teal);
-  margin-top: 6px;
-  max-width: 150px;
-}
-
 /* Pills (Expertise & Skills) */
 .pill-group { display: flex; flex-wrap: wrap; gap: 12px; }
 .pill {
@@ -394,15 +364,6 @@ a { color: inherit; text-decoration: none; }
   color: var(--purple);
 }
 
-/* Pull-quote callout within body text */
-.callout {
-  border-left: 3px solid var(--purple);
-  padding: 18px 24px;
-  background: rgba(255, 255, 255, 0.55);
-  margin: 4px 0;
-}
-.callout p { font-weight: 500; }
-
 /* Project cards — picture + text format */
 .projects-list--media { display: flex; flex-direction: column; gap: 28px; margin-top: 8px; }
 .project-card--media {
@@ -427,10 +388,6 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 900px) {
   .pillars { grid-template-columns: repeat(3, 1fr); }
-  .hero-grid { grid-template-columns: 1fr; gap: 32px; }
-  .hero-stats { flex-direction: row; flex-wrap: wrap; gap: 28px; }
-  .stat { text-align: left; }
-  .stat__label { max-width: none; }
   .grid-2, .grid-2--reverse { grid-template-columns: 1fr; }
   .project-card--media { flex-direction: column; }
   .project-card__thumb { width: 120px; height: 120px; }
