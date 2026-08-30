@@ -14,7 +14,6 @@
 
 <nav class="nav">
   <div class="nav__side nav__left">
-    <a href="/about.html">About</a>
     <a href="/journey.html">Journey</a>
     <a href="/approach.html">Approach</a>
     <a href="/notes.html">Notes</a>
@@ -31,39 +30,69 @@
   <p>Fifteen years on the behavioral data side of what drives people to engage, stay, go deeper, or walk away.</p>
 </header>
 
-<section class="block block--teal-tint">
-  <div class="block__inner">
-    <div class="preview__head">
-      <h2>About</h2>
-      <a class="preview__more" href="/about.html">Read more →</a>
+<section class="highlights">
+  <div class="highlights-grid">
+
+    <div class="highlight-card highlight-card--teal">
+      <div class="preview__head">
+        <h2>Journey</h2>
+        <a class="preview__more" href="/journey.html">Read more →</a>
+      </div>
+      <p class="teaser">Seven stops on the way from scooping water samples out of a Florida river to leading analytics at a sports-game franchise processing telemetry for millions of active users — and the lesson each stop left behind.</p>
     </div>
-    <p class="teaser">Fifteen years figuring out which questions are worth asking of data, not just pulling the answers. Building and leading data functions from game studios to franchises processing telemetry for millions of active users.</p>
+
+    <div class="highlight-card highlight-card--purple">
+      <div class="preview__head">
+        <h2>Approach</h2>
+        <a class="preview__more" href="/approach.html">Read more →</a>
+      </div>
+      <p class="teaser">Right math, wrong question, wrong result. Why the industry never mattered as much as the instinct to ask the right question — and the toolkit built around it.</p>
+    </div>
+
+    <div class="highlight-card highlight-card--teal">
+      <div class="preview__head">
+        <h2>Notes</h2>
+        <a class="preview__more" href="/notes.html">Read more →</a>
+      </div>
+      <div class="note-card">
+        <div class="note-card__meta">August 2026</div>
+        <div class="note-card__title"><a href="/bounded-ai-reporting.html">The AI analyst doesn't know what it doesn't know</a></div>
+        <p class="note-card__teaser">Unbounded AI reporting is confidently incomplete — it looks exactly as polished whether the comparison group is valid or not.</p>
+      </div>
+    </div>
+
+    <div class="highlight-card highlight-card--purple">
+      <div class="preview__head">
+        <h2>Projects</h2>
+        <a class="preview__more" href="/projects.html">Read more →</a>
+      </div>
+      <p class="teaser">Tools built to bring fifteen years of analytics-team instinct into AI-assisted workflows — starting with an intake tool that turns "give me a number" requests into structured decision briefs, with a human analyst kept firmly in the loop.</p>
+    </div>
+
   </div>
 </section>
 
-<section class="block block--purple-tint">
-  <div class="block__inner">
-    <div class="preview__head">
-      <h2>Notes</h2>
-      <a class="preview__more" href="/notes.html">Read more →</a>
-    </div>
-    <div class="note-card">
-      <div class="note-card__meta">August 2026</div>
-      <div class="note-card__title"><a href="/bounded-ai-reporting.html">The AI analyst doesn't know what it doesn't know</a></div>
-      <p class="note-card__teaser">Unbounded AI reporting is confidently incomplete — it looks exactly as polished whether the comparison group is valid or not.</p>
-    </div>
-  </div>
-</section>
+<script>
+(function () {
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.highlight-card'));
 
-<section class="block">
-  <div class="block__inner">
-    <div class="preview__head">
-      <h2>Projects</h2>
-      <a class="preview__more" href="/projects.html">Read more →</a>
-    </div>
-    <p class="teaser">Tools built to bring fifteen years of analytics-team instinct into AI-assisted workflows — starting with an intake tool that turns "give me a number" requests into structured decision briefs, with a human analyst kept firmly in the loop.</p>
-  </div>
-</section>
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    cards.forEach(function (c) { c.classList.add('is-visible'); });
+    return;
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
+  cards.forEach(function (c) { observer.observe(c); });
+})();
+</script>
 
 </body>
 </html>
