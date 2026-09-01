@@ -554,8 +554,7 @@ section[id] { scroll-margin-top: 90px; }
   border: 1px solid;
   white-space: nowrap;
 }
-.pill--teal { color: var(--teal); border-color: var(--teal); background: rgba(44, 84, 104, 0.06); }
-.pill--purple { color: var(--purple); border-color: var(--purple); background: rgba(107, 78, 142, 0.06); }
+.pill--teal, .pill--purple { color: var(--purple); border-color: var(--purple); background: rgba(107, 78, 142, 0.06); }
 .pill--sm { padding: 5px 13px; font-size: 11px; }
 
 /* Industry / transferable-skill tags */
