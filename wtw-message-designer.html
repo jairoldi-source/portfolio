@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From "We Have This Research" to "Our Work Reflects It" — Jen Airoldi</title>
+<meta name="description" content="Turning a research-backed local-news messaging toolkit into an interactive coach practitioners actually use, with human-in-the-loop guardrails at every consequential step.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__brand-group">
+    <a class="brand" href="/">Jen Airoldi</a>
+    <span class="nav__tagline">Analytics &amp; data leadership</span>
+  </div>
+  <div class="nav__side">
+    <a href="/#approach">Approach</a>
+    <a href="/#expertise">Expertise</a>
+    <a href="/#projects">Projects</a>
+    <a href="/#journey">Journey</a>
+    <a href="/#contact">Contact</a>
+  </div>
+</nav>
+
+<main class="page">
+  <a class="back-link" href="/#projects">← All Projects</a>
+  <h1>From "We Have This Research" to "Our Work Reflects It"</h1>
+  <p class="lede">An interactive tool that turns the Words That Work messaging research into moment-of-drafting coaching for local newsrooms, built with guardrails so the AI can't outrun what the research actually supports.</p>
+
+  <div class="article">
+    <h2>The problem: research that lives in a PDF</h2>
+    <p>The <a href="https://www.pressforward.news/wordsthatwork/" target="_blank" rel="noopener">Words That Work toolkit</a>, developed by Press Forward and Beekeeper Group, is a research-backed guide to which local news message frames resonate with which audiences, and which words and phrases to use or avoid. It's the kind of evidence-based foundation that could change how newsrooms talk to their communities.</p>
+    <p>In practice, research like this tends to live in a PDF. It gets read once, referenced occasionally, and applied inconsistently. Not because people don't value it, but because there's no infrastructure that makes it easy to use systematically. The gap between "we have this research" and "our communications work reflects this research" is where most of the value gets lost.</p>
+    <p>I wanted to build a tool that bridged that gap and made the research actionable.</p>
+
+    <h2>From researcher to coach, with guardrails</h2>
+    <p>The first part of the tool turns the PDF messaging guidance toolkit into an interactive message building tool. What I wanted was something that communications people would use, not just reference: a tool that could give them specific, grounded feedback at the moment they were drafting a message.</p>
+    <p>Essentially that is taking the role of the AI from researcher to coach. But if I was going to remove the human bridge between the research and the message, I wanted to make sure the tool had enough guardrails that we didn't see the kind of confident yet completely misguided feedback AI is notorious for. So before I built anything for users, I built for testability. The Message Builder knowledge base is structured so that every frame, every audience mapping, every word on the avoid list is explicit and inspectable. The model can only return frames that exist in the research; it can't invent new ones.</p>
+    <p>The other AI weakness I wanted to build around is the doesn't-know-what-it-doesn't-know problem. AI is good at pattern matching against a knowledge base. It's not good at knowing when the knowledge base is wrong, when an experiment was biased, or when a new piece of research should change the guidance. To make sure human expertise stays in the loop as the tool evolves, every consequential step requires a human decision: every confirmation of a hypothesis, every approval of a knowledge update, every selection of which experiments to synthesize is vetted by a person. That's not a limitation of the prototype. It's a design choice I'd keep in a production version.</p>
+
+    <h2>The build: five tabs, one workflow</h2>
+    <p>The tool has five tabs, each representing a step in a communications workflow.</p>
+
+    <h3>Message evaluation &amp; audience matching</h3>
+    <p>These two let a practitioner get immediate, specific feedback on a draft. Not "this message could be stronger" but "this message uses democracy language for a general public audience, which the WTW research shows consistently underperforms, and here's what a revised version would look like."</p>
+
+    <h3>Experiment builder</h3>
+    <p>Walks practitioners through designing a real A/B test: hypothesis, control message, measurement approach, sample size, confounders to watch for. The goal was to make rigorous experimental design accessible to people who aren't statisticians, with enough explanation that they understand what they're doing and why.</p>
+
+    <h3>Results dashboard</h3>
+    <p>Interprets experiment outcomes through the WTW lens, including automated detection of Simpson's Paradox (cases where the treatment wins overall but loses in specific audience segments), so findings don't get missed by looking only at aggregate results.</p>
+
+    <h3>Synthesis workbench</h3>
+    <p>This is the tab that would enlarge the scope and scale of the findings. It lets a user bring in experiment results from multiple sources, flag outliers and caveats, incorporate new research documents, and generate a proposed update to the WTW knowledge base, section by section, with a before/after comparison showing how practitioner messages would actually change under the new guidance. Nothing gets written until a human reviews and confirms. This is the tab that lets the tool learn and evolve, based on how messages crafted under the current guidance actually perform with audiences over time.</p>
+
+    <h2>What the full version would be</h2>
+    <p>The prototype is built for a single newsroom. The more interesting version is infrastructure for an organization like AJP.</p>
+    <p>If experiment results from across a grantee network flow into a shared synthesis workbench, with a program officer selecting which ones meet quality standards, flagging outliers, and incorporating new research as it emerges, the toolkit stops being a static document and starts being a living system. Every experiment a newsroom runs becomes a potential contribution to better guidance for everyone else.</p>
+    <p>At that scale, the analytics questions get interesting. Does geography affect message effectiveness? Are there temporal patterns tied to current events: frames that work better during election season, or after a local crisis? Which frames travel across audiences, and which are highly specific? The data to answer those questions exists in the experiments newsrooms are already running. The infrastructure to aggregate and learn from it doesn't exist yet.</p>
+    <p>I think that's a version worth building, and it isn't limited to local news messaging. The same architecture applies anywhere there's research-backed guidance, people applying that research, and data that could improve the process.</p>
+  </div>
+</main>
+
+</body>
+</html>
