@@ -855,34 +855,42 @@ section[id] { scroll-margin-top: 90px; }
   .project-card--media { flex-direction: column; }
   .project-card__thumb { width: 120px; height: 120px; }
 
-  .journey-track { padding: 0 7vw; }
+  .journey-track { padding: 0 7vw; counter-reset: journey; }
   .journey-track__path { display: none; }
   .journey-dot { display: none; }
   .journey-track::before {
     content: '';
     position: absolute;
-    left: 6px;
-    top: 0;
+    left: 13px;
+    top: 4px;
     bottom: 0;
     width: 2px;
     background: rgba(22, 64, 86, 0.25);
   }
   .journey-node {
+    counter-increment: journey;
     justify-content: flex-start !important;
     margin-bottom: 0;
-    padding: 0 0 48px 32px;
+    padding: 0 0 48px 46px;
   }
   .journey-node:last-child { padding-bottom: 0; }
   .journey-node::before {
-    content: '';
+    content: counter(journey, decimal-leading-zero);
     position: absolute;
     left: 0;
-    top: 28px;
-    width: 14px;
-    height: 14px;
+    top: 4px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     background: var(--bg);
-    border: 3px solid var(--purple);
+    border: 2px solid var(--purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--purple);
   }
   .journey-card { width: 100%; }
 }
