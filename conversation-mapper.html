@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Using Data to Facilitate Real Conversation — Jen Airoldi</title>
+<meta name="description" content="A topic and speaker-role analysis tool for campaigns and advocacy orgs, built around a simple question: who's actually listening, and what do you want from them?">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__brand-group">
+    <a class="brand" href="/">Jen Airoldi</a>
+    <span class="nav__tagline">Analytics &amp; data leadership</span>
+  </div>
+  <div class="nav__side">
+    <a href="/#approach">Approach</a>
+    <a href="/#expertise">Expertise</a>
+    <a href="/#projects">Projects</a>
+    <a href="/#journey">Journey</a>
+    <a href="/#contact">Contact</a>
+  </div>
+</nav>
+
+<main class="page">
+  <a class="back-link" href="/#projects">← All Projects</a>
+  <h1>Using Data to Facilitate Real Conversation</h1>
+  <p class="lede">A topic and speaker-role analysis tool for campaigns and advocacy orgs, built around a simple question: who's actually listening, and what do you want from them?</p>
+
+  <div class="article">
+    <h2>The problem: broadcasting when you should be listening</h2>
+    <p>Some public figures have a natural gift for social media rapport. Watch someone like AOC engage online and you can see real back-and-forth: she's in conversation with the people following her, not just talking at them. Most campaigns, candidates, and advocacy orgs don't have that instinct. Without it, the default mode is broadcast. Post the update, post the ask, post the stat, move to the next post. The conversation that should be happening around the campaign never actually happens.</p>
+    <p>That's not a charisma problem you can coach your way out of in a few weeks. But it might be a data problem you can work around. Data can stand in for the instinct: showing you who's actually listening and how to talk to them differently, instead of sending everyone the same broadcast.</p>
+    <p>There's a second blind spot underneath the first. Most campaigns and advocacy orgs treat fundraising as the only goal that matters on social media. A well-run conversation can serve a lot of other goals too.</p>
+
+    <h2>What makes this different</h2>
+    <p>Most social listening tools were built for brands, and it shows in what they surface: keyword mentions, sentiment scores, top accounts ranked by follower count. That tells you what got said and roughly by whom, but not much about the actual shape of the conversation, or who's worth engaging differently.</p>
+    <p>Conversation Mapper is built around three different questions instead:</p>
+    <ul>
+      <li>Not just what keywords came up, but what people are actually talking about: thematic subtopics, grouped by meaning rather than matched by word.</li>
+      <li>Not just follower count, but speaker role. The difference between a genuine local voice, a consistent amplifier, and an account just passing along other people's content matters more than raw reach when you're deciding who to build a relationship with, and how.</li>
+      <li>Not a dashboard of metrics, but a direction: which conversations are worth joining, which voices are worth engaging, and toward what goal.</li>
+    </ul>
+
+    <h2>How it works</h2>
+    <p>The pipeline starts with raw posts pulled from a public conversation (a district, a campaign, a topic, whatever the boundary is) and filters out news reposts, spam, and noise to isolate posts that actually reflect people talking about their own experience.</p>
+    <p>From there, it groups the remaining posts into thematic subtopics using semantic clustering rather than keyword matching. Conversations get grouped by what they're actually about, not by which specific words happened to get used.</p>
+    <p>At the same time, it identifies every unique speaker in the conversation and builds a feature profile for each one: reach, posting frequency and consistency, whether they're sharing original thoughts or mostly amplifying others, and signals of authentic personal voice versus institutional or promotional accounts. Those profiles get clustered into a handful of distinct speaker roles, not "high follower" versus "low follower," but something closer to who someone actually is in the conversation.</p>
+    <p>The last step ties it back to the actual goal. Fundraising is the default thing every tool assumes you care about, but it's rarely the only thing that matters. Recruiting volunteers, cultivating people who'll amplify a message, reaching people who are confused rather than opposed: these are all real, different goals. Conversation Mapper's output maps each speaker role to whichever goal you're actually working toward, instead of defaulting to the one everyone else optimizes for.</p>
+
+    <h2>The validation problem</h2>
+    <p>There's a real limitation built into any clustering approach like this, worth naming plainly. The pipeline can group speakers who share behavioral features into a role, but it can't, on its own, confirm that the role is a meaningful, actionable category rather than just a statistical grouping. A cluster can look clean (tight, well-separated, interpretable) and still turn out to be an artifact of the feature set rather than a real distinction that matters for engagement strategy.</p>
+    <p>The honest fix is engagement data: watching how each proposed role actually behaves and responds over time, and using that to validate or throw out the role definitions. That's a slower, iterative process than a single analysis can deliver, which means a first pass should be treated as a strong hypothesis, not a finished answer.</p>
+
+    <p>None of this is meant to replace judgment with a chart. The clustering surfaces structure a person would take much longer to find by reading posts one at a time. But knowing whether that structure is the right structure still takes someone who understands the conversation deciding whether it holds up.</p>
+  </div>
+</main>
+
+</body>
+</html>
