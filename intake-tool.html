@@ -56,13 +56,25 @@
     <p>There's a more concrete reason for that line, too. Most Gen AI reporting efforts run into the same wall: AI is probabilistic, and analytics is deterministic. A hallucinated number is bad in a way that's hard to walk back. Even when it doesn't lead to an outright bad decision, it damages trust in the data itself, and that trust doesn't come back easily. So instead of pointing AI at the numbers, this tool points it at something where a wrong guess is cheap to catch and correct: the intake conversation, and the knowledge base behind it.</p>
     <p>Every analytics team builds up scar tissue over time — the one analyst who just knows the app went down last year on that particular Tuesday, so this year's comps need an asterisk. That knowledge usually lives in one person's head and a scattered Slack thread, and it surfaces right when it's about to save (or quietly ruin) an analysis. This tool is built to catch that tribal knowledge as analysts teach it to the AI once, and put it in front of everyone - human and AI alike - the next time it's relevant.</p>
 
+    <figure class="article-figure">
+      <img src="intake-status-lifecycle.png" alt="Diagram of the status lifecycle a request moves through, from Needs Review through Answered, Declined, or Awaiting Approval, to Prioritized, In Progress, Closed, and Reopened.">
+      <figcaption>Every state a request can be in, and who's actually allowed to move it there. A stakeholder confirming they still want something is a visible signal, not a switch, and only an analyst decides when it's real enough to schedule.</figcaption>
+    </figure>
+
     <h2>How it works</h2>
     <h3>For stakeholders</h3>
     <p>The tool gives you a plain-language place to actually talk through your analytics ask. If it's something the team has already answered, it can point you straight to the existing dashboard or past analysis, link included, with a quick how-to. For anything more involved, it walks you through a short, adaptive conversation about the business question behind your ask. It is not a static form, but real questions shaped by what you've asked and what's already in the knowledge base. From there, your request goes to an analyst. Once they've replied, you can keep the conversation going, mark it resolved, or, for anything that needs real analytics work, ask to have it prioritized into the sprint queue. You can check your own requests any time, or see what the whole team's queue looks like.</p>
 
     <h3>For analysts</h3>
     <p>The tool does two things: it helps turn a stakeholder's raw ask into something actionable, and it helps you build a knowledge base that both you and the AI can draw on later.</p>
-    <p>On the conversation side, the AI is prompted to walk stakeholders up the "so what" ladder itself: asking the probing questions, informed by what's already in the KB, and you'll see the results waiting in your queue, ready for you to tighten before anything goes back to the stakeholder. Take as much or as little of the AI's draft as you want. It's built to point stakeholders at an existing dashboard, a past analysis, or a near-identical past request before proposing new work from scratch.</p>
+    <p>On the conversation side, the AI is prompted to walk stakeholders up the "so what" ladder itself: asking the probing questions, informed by what's already in the KB, and you'll see the results waiting in your queue, ready for you to tighten before anything goes back to the stakeholder.</p>
+
+    <figure class="article-figure">
+      <img src="intake-ai-triage.png" alt="Screenshot of the AI triage panel, showing a suggested verdict of Push Back with a 72% confidence score, its reasoning, and buttons to accept the recommendation or set the verdict manually.">
+      <figcaption>The AI Triage will suggest a verdict with a confidence score and the reasoning behind it, including what in the knowledge base was relevant. The analyst can accept it, override it, or just use it as a first draft. No matter what, nothing goes to the stakeholder until a person clicks send.</figcaption>
+    </figure>
+
+    <p>Take as much or as little of the AI's draft as you want. It's built to point stakeholders at an existing dashboard, a past analysis, or a near-identical past request before proposing new work from scratch.</p>
     <p>The knowledge base behind all of this covers your segments, definitions, known events, past analyses, dashboards, and levers, plus the heuristics that shape how the AI reasons about a request. It's yours to edit any time from the left nav, and the tool actively nudges you toward it: mention a sale or a campaign in a request, and it'll suggest adding it as a known event; describe a new way of segmenting players, and it'll suggest a new segment. The more you build it out, the better the tool gets at framing requests, routing stakeholders to existing work, and suggesting your own next step, including a first-draft scoping document, pulled straight from the KB you've built.</p>
 
     <h2>The cost of getting smarter</h2>
