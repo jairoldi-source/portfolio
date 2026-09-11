@@ -516,7 +516,7 @@ nav + .hero, nav + .block { margin-top: 24px; }
 .block--dusty .transfer-intro p { color: #173040; }
 .block--dusty .section-label { color: #173040; opacity: 0.75; }
 
-section[id] { scroll-margin-top: 90px; }
+[id] { scroll-margin-top: 90px; }
 
 .btn-pill {
   display: inline-flex;
